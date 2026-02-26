@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quant Scale | L'extension Ultime de Risk Management</title>
+    <!-- Tailwind CSS (via CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <!-- Fichier CSS personnalisé -->
+    <link rel="stylesheet" href="Assets/css/style.css">
+</head>
+
+<body class="antialiased">
+
+    <!-- Canvas pour l'effet de fond (allégé) -->
+    <canvas id="canvas-bg"></canvas>
+
+    <div class="content">
+        <!-- Navbar -->
+        <nav
+            class="sticky top-4 z-50 max-w-6xl mx-auto px-6 py-4 bg-[#0a0c10]/70 backdrop-blur-lg rounded-full shadow-lg flex justify-between items-center">
+            <div class="text-lg font-extrabold tracking-tight uppercase">Quant <span
+                    class="text-[var(--q-green)]">Scale</span></div>
+            <div class="hidden md:flex gap-8 text-[13px] font-medium text-gray-300">
+                <a href="#features" class="hover:text-white transition">Fonctionnalités</a>
+                <a href="#download" class="hover:text-white transition">Télécharger</a>
+                <a href="https://github.com/Damien-Codes/QuantScale" class="hover:text-white transition">GitHub</a>
+            </div>
+            <!-- Bouton menu mobile -->
+            <button class="md:hidden text-gray-300 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linecap="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="relative pt-20 pb-32 px-6">
+            <div class="max-w-6xl mx-auto text-center">
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--q-green)]/10 border border-[var(--q-green)]/20 text-[var(--q-green)] text-[10px] font-bold uppercase tracking-widest mb-8">
+                    <span class="relative flex h-2 w-2">
+                        <span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--q-green)] opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-[var(--q-green)]"></span>
+                    </span>
+                    Calculateur en temps réel
+                </div>
+                <h1
+                    class="text-5xl md:text-7xl font-extrabold tracking-tighter mb-8 bg-gradient-to-b from-white to-gray-500 bg-clip-text text-transparent">
+                    Tradez avec une <br class="hidden md:block"> précision chirurgicale.
+                </h1>
+                <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light">
+                    Oubliez les erreurs de calcul. Gérez votre risque sur le Forex, la Crypto et les Matières premières
+                    directement depuis votre navigateur.
+                </p>
+                <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+                    <a href="#"
+                        class="btn-primary text-black font-extrabold px-10 py-4 rounded-lg flex items-center gap-2">
+                        Télécharger l'extension ( Bientôt )
+                    </a>
+                </div>
+                <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+                    <a href="#"
+                        class="btn-primary text-black font-extrabold px-10 py-4 rounded-lg flex items-center gap-2">
+                        Voir sur GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Fonctionnalités revisitée (avec émojis) -->
+        <section id="features" class="py-24 px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-extrabold mb-6 text-center italic tracking-tighter text-[var(--q-green)]">
+                    📊 Fonctionnalités
+                </h2>
+                <p class="text-center text-gray-400 mb-16 max-w-2xl mx-auto">
+                    Découvrez tout ce que l'extension Quant Scale peut faire pour améliorer votre trading.
+                </p>
+
+                <!-- Grille de 6 fonctionnalités avec émojis -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+                    <div class="feature-card p-6 rounded-xl flex flex-col items-start">
+                        <div class="text-3xl mb-4">📊</div>
+                        <h3 class="text-lg font-bold mb-2">Multi-Assets Engine</h3>
+                        <p class="text-gray-400 text-sm">Algorithmes dédiés pour le Forex, les Cryptos et les Matières
+                            premières. Un seul outil pour tous vos marchés.</p>
+                    </div>
+                    <div class="feature-card p-6 rounded-xl flex flex-col items-start">
+                        <div class="text-3xl mb-4">💴</div>
+                        <h3 class="text-lg font-bold mb-2">Calculateur de Devises</h3>
+                        <p class="text-gray-400 text-sm">Gestion native des devises avec ajustement automatique
+                            des décimales pour une précision sans faille.</p>
+                    </div>
+                    <div class="feature-card p-6 rounded-xl flex flex-col items-start">
+                        <div class="text-3xl mb-4">⚡</div>
+                        <h3 class="text-lg font-bold mb-2">Rapide et Simple</h3>
+                        <p class="text-gray-400 text-sm">Interface intuitive qui s'intègre parfaitement à votre flux de
+                            trading sans encombrer l'interface.</p>
+                    </div>
+                    <div class="feature-card p-6 rounded-xl flex flex-col items-start">
+                        <div class="text-3xl mb-4">🔒</div>
+                        <h3 class="text-lg font-bold mb-2">Sécurisé</h3>
+                        <p class="text-gray-400 text-sm">Aucune donnée de trading n'est collectée. Vos calculs restent
+                            locaux et votre stratégie privée.</p>
+                    </div>
+                    <div class="feature-card p-6 rounded-xl flex flex-col items-start">
+                        <div class="text-3xl mb-4">🌐</div>
+                        <h3 class="text-lg font-bold mb-2">Multi-plateforme</h3>
+                        <p class="text-gray-400 text-sm">Fonctionne sur tous les navigateurs basés sur Chromium (Chrome,
+                            Edge, Brave, etc.).</p>
+                    </div>
+                    <div class="feature-card p-6 rounded-xl flex flex-col items-start">
+                        <div class="text-3xl mb-4">🆓</div>
+                        <h3 class="text-lg font-bold mb-2">Gratuit</h3>
+                        <p class="text-gray-400 text-sm">Extension entièrement gratuite et open source, disponible sur
+                            GitHub.</p>
+                    </div>
+                </div>
+
+                <!-- Comment ça marche ? revisité avec cercles numérotés -->
+                <div class="feature-card p-8 rounded-2xl max-w-4xl mx-auto">
+                    <h3 class="text-2xl font-bold mb-8 text-center text-[var(--q-green)]">Comment ça marche ?</h3>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div class="step-circle">1</div>
+                            <p class="text-gray-300 mt-3">Installez l'extension depuis le Chrome Web Store</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="step-circle">2</div>
+                            <p class="text-gray-300 mt-3">Ouvrez votre plateforme de trading et configurez votre risque
+                            </p>
+                        </div>
+                        <div class="text-center">
+                            <div class="step-circle">3</div>
+                            <p class="text-gray-300 mt-3">Cliquez sur l'icône de l'extension pour calculer
+                                instantanément votre taille de position</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Simulation (structure révisée) -->
+        <section id="demo" class="py-20 px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-extrabold mb-10 italic tracking-tighter text-[var(--q-green)] text-center">
+                    🧪 SIMULATEUR INTERACTIF
+                </h2>
+
+                <!-- Sélecteur d'actif avec indicateur -->
+                <div class="flex flex-wrap justify-center items-center gap-4 mb-10">
+                    <div class="flex gap-2 p-1 bg-white/5 rounded-lg border border-white/10">
+                        <button id="assetForex" class="asset-button active" data-asset="forex">Forex</button>
+                        <button id="assetCrypto" class="asset-button" data-asset="crypto">Crypto</button>
+                        <button id="assetCommodity" class="asset-button" data-asset="commodity">Matières
+                            premières</button>
+                    </div>
+                </div>
+
+                <!-- Bloc Prise en main rapide -->
+                <div class="feature-card p-6 rounded-2xl mb-10">
+                    <h3 class="text-xl font-bold mb-4 text-[var(--q-green)]">📘 Prise en main rapide</h3>
+                    <div class="space-y-4">
+                        <div class="flex gap-4">
+                            <div class="step-number">1</div>
+                            <p class="text-gray-300"><strong class="text-white">Configurez :</strong>
+                                Indiquez votre capital et votre risque en %.</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="step-number">2</div>
+                            <p class="text-gray-300"><strong class="text-white">Définissez vos zones :</strong>
+                                Saisissez vos niveaux de prix de votre Take Profit et Stop Loss par rapport à votre
+                                point d'entrée.</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="step-number">3</div>
+                            <p class="text-gray-300"><strong class="text-white">Arbitrez :</strong>
+                                Visualisez votre volume optimal, votre profit potentiel et votre risque réel avec
+                                précision.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grille à deux colonnes : résultats chiffrés (gauche) et paramètres (droite) -->
+                <div class="grid lg:grid-cols-2 gap-8 items-start">
+                    <!-- Colonne droite : paramètres -->
+                    <div class="feature-card p-6 rounded-2xl space-y-5">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="simulator-label">Capital ($)</label>
+                                <input type="number" id="capital" value="10000" min="100" step="100"
+                                    class="simulator-input">
+                            </div>
+                            <div>
+                                <label class="simulator-label">Risque (%)</label>
+                                <input type="number" id="riskPercent" value="1" min="0.1" max="100" step="0.1"
+                                    class="simulator-input">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="simulator-label">Prix d'entrée</label>
+                            <input type="number" id="entryPrice" value="1.16671" step="0.00001" class="simulator-input">
+                        </div>
+                        <div>
+                            <label class="simulator-label">Stop-loss (prix)</label>
+                            <input type="number" id="stopPrice" value="1.16600" step="0.00001" class="simulator-input">
+                        </div>
+                        <div>
+                            <label class="simulator-label">Take-profit (prix)</label>
+                            <input type="number" id="tpPrice" value="1.16900" step="0.00001" class="simulator-input">
+                        </div>
+                        <p class="text-[10px] text-gray-500 pt-2">*Valeurs illustratives – calcul instantané.</p>
+                    </div>
+                    <!-- Colonne gauche : résultats chiffrés -->
+                    <div class="space-y-6">
+                        <!-- Risk/Reward -->
+                        <div class="text-center">
+                            <span
+                                class="text-sm text-[var(--q-green)] font-bold uppercase tracking-widest">Risk/Reward</span>
+                            <div class="text-5xl mono font-extrabold text-[var(--q-green)]" id="rrRatio">3.23</div>
+                        </div>
+                        <!-- Cartes de résultats -->
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="result-card">
+                                <div class="result-label">Taille de position</div>
+                                <div class="result-value" id="positionSize">1.41</div>
+                                <div class="text-xs text-gray-400" id="positionUnit">LOTS</div>
+                            </div>
+                            <div class="result-card">
+                                <div class="result-label">Risque</div>
+                                <div class="result-value text-[var(--q-red)]" id="riskAmount">100.00</div>
+                                <div class="text-xs text-gray-400">USD</div>
+                            </div>
+                            <div class="result-card">
+                                <div class="result-label">Profit potentiel</div>
+                                <div class="result-value text-[var(--q-green)]" id="profitPotential">322.54</div>
+                                <div class="text-xs text-gray-400">USD</div>
+                            </div>
+                            <div class="result-card">
+                                <div class="result-label">Distance SL</div>
+                                <div class="result-value" id="slDistance">7.1</div>
+                                <div class="text-xs text-gray-400">PIPS</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Télécharger revisitée (avec émojis) -->
+        <section id="download" class="py-24 px-6 border-y border-white/5">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-extrabold mb-6 text-center italic tracking-tighter text-[var(--q-green)]">
+                    📥 Télécharger l'extension
+                </h2>
+                <p class="text-center text-gray-400 mb-16 max-w-2xl mx-auto">
+                    Installez l'extension Quant Scale et améliorez votre trading dès aujourd'hui.
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-8 mb-16">
+                    <!-- Option Chrome Web Store -->
+                    <div class="feature-card p-8 rounded-2xl flex flex-col items-center text-center">
+                        <div class="text-5xl mb-4">🛒</div>
+                        <h3 class="text-2xl font-bold mb-3">Chrome Web Store</h3>
+                        <p class="text-gray-400 text-sm mb-6">Installation simple et sécurisée depuis le Chrome Web
+                            Store officiel.</p>
+                        <a href="#"
+                            class="btn-primary text-black font-extrabold px-8 py-3 rounded-lg inline-block">Installer
+                            depuis le Store ( Bientôt )</a>
+                    </div>
+                    <!-- Option Installation manuelle -->
+                    <div class="feature-card p-8 rounded-2xl flex flex-col items-center text-center">
+                        <div class="text-5xl mb-4">📦</div>
+                        <h3 class="text-2xl font-bold mb-3">Installation manuelle</h3>
+                        <p class="text-gray-400 text-sm mb-6">Téléchargez le fichier ZIP et installez l'extension
+                            manuellement.</p>
+                        <a href="#"
+                            class="btn-primary text-black font-extrabold px-8 py-3 rounded-lg inline-block">Télécharger
+                            ZIP</a>
+                    </div>
+                </div>
+
+                <!-- Instructions installation manuelle -->
+                <div class="feature-card p-8 rounded-2xl max-w-3xl mx-auto">
+                    <h3 class="text-xl font-bold mb-6 text-center text-[var(--q-green)]">Instructions d'installation
+                        manuelle</h3>
+                    <ol class="list-decimal list-inside space-y-3 text-gray-300">
+                        <li><span class="text-white font-semibold">Téléchargez le fichier ZIP depuis GitHub</span></li>
+                        <li><span class="text-white font-semibold">Extrayez le contenu du ZIP dans un dossier</span>
+                        </li>
+                        <li><span class="text-white font-semibold">Ouvrez Chrome et allez dans <code
+                                    class="bg-black/30 px-2 py-1 rounded">chrome://extensions/</code></span></li>
+                        <li><span class="text-white font-semibold">Activez le "Mode développeur" en haut à droite</span>
+                        </li>
+                        <li><span class="text-white font-semibold">Cliquez sur "Charger l'extension non empaquetée" et
+                                sélectionnez le dossier extrait</span></li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer revisité (style PiP QR) -->
+        <footer class="bg-[#0a0c10] border-t border-white/5 py-16 px-6">
+            <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10">
+                <!-- Colonne gauche : logo + description -->
+                <div>
+                    <div class="text-2xl font-extrabold tracking-tight uppercase mb-4">Quant <span
+                            class="text-[var(--q-green)]">Scale</span></div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        L'extension ultime pour gérer votre risque sur le Forex, la Crypto et les Matières premières
+                        directement depuis votre navigateur.
+                    </p>
+                </div>
+
+                <!-- Colonne milieu : Liens rapides -->
+                <div>
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-[var(--q-green)] mb-4">Liens rapides</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#download"
+                                class="text-gray-400 hover:text-white transition text-sm">Télécharger</a></li>
+                        <li><a href="https://github.com/Damien-Codes/QuantScale"
+                                class="text-gray-400 hover:text-white transition text-sm">GitHub</a></li>
+                        <li><a href="#demo" class="text-gray-400 hover:text-white transition text-sm">Démonstration</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Colonne droite : Support & légal -->
+                <div>
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-[var(--q-green)] mb-4">Support</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition text-sm">Signaler un bug</a>
+                        </li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition text-sm">Contact</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition text-sm">Mentions légales</a>
+                        </li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition text-sm">Politique de
+                                confidentialité</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition text-sm">Documentation</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div
+                class="max-w-6xl mx-auto mt-12 pt-8 border-t border-white/5 text-center text-gray-600 text-[10px] uppercase tracking-[0.3em] mono font-bold">
+                Quant Scale © 2026 | Built for Precision Traders
+            </div>
+        </footer>
+    </div>
+
+    <!-- ==================== SCRIPT INTÉGRÉ ==================== -->
+    <script>
+        // Effet de fond "antigravity" (particules)
+        (function () {
+            const canvas = document.getElementById('canvas-bg');
+            if (!canvas) {
+                console.warn("Canvas #canvas-bg introuvable. Animation désactivée.");
+                return;
+            }
+            const ctx = canvas.getContext('2d');
+            let width, height;
+            let particles = [];
+            const PARTICLE_COUNT = 80;
+            const MAX_DIST = 180;
+            const REPULSION_RADIUS = 120;
+            const REPULSION_FORCE = 0.3;
+            let mouse = { x: null, y: null, active: false };
+
+            function initParticles() {
+                particles = [];
+                for (let i = 0; i < PARTICLE_COUNT; i++) {
+                    particles.push({
+                        x: Math.random() * width,
+                        y: Math.random() * height,
+                        vx: (Math.random() - 0.5) * 0.5,
+                        vy: (Math.random() - 0.5) * 0.5,
+                        radius: Math.random() * 2 + 1.5,
+                        color: `rgba(0, 255, 136, ${Math.random() * 0.3 + 0.2})`
+                    });
+                }
+            }
+
+            function updateParticles() {
+                for (let p of particles) {
+                    p.x += p.vx;
+                    p.y += p.vy;
+
+                    if (p.x < 0 || p.x > width) {
+                        p.vx *= -0.9;
+                        p.x = Math.min(Math.max(p.x, 0), width);
+                    }
+                    if (p.y < 0 || p.y > height) {
+                        p.vy *= -0.9;
+                        p.y = Math.min(Math.max(p.y, 0), height);
+                    }
+
+                    if (mouse.active && mouse.x !== null && mouse.y !== null) {
+                        const dx = p.x - mouse.x;
+                        const dy = p.y - mouse.y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+                        if (dist < REPULSION_RADIUS) {
+                            const force = (REPULSION_RADIUS - dist) / REPULSION_RADIUS * REPULSION_FORCE;
+                            const angle = Math.atan2(dy, dx);
+                            p.vx += Math.cos(angle) * force;
+                            p.vy += Math.sin(angle) * force;
+                        }
+                    }
+
+                    const maxSpeed = 1.2;
+                    if (Math.abs(p.vx) > maxSpeed) p.vx = Math.sign(p.vx) * maxSpeed;
+                    if (Math.abs(p.vy) > maxSpeed) p.vy = Math.sign(p.vy) * maxSpeed;
+                }
+            }
+
+            function draw() {
+                ctx.clearRect(0, 0, width, height);
+
+                ctx.strokeStyle = 'rgba(0, 255, 136, 0.15)';
+                ctx.lineWidth = 1;
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const p1 = particles[i];
+                        const p2 = particles[j];
+                        const dx = p1.x - p2.x;
+                        const dy = p1.y - p2.y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+                        if (dist < MAX_DIST) {
+                            const opacity = (1 - dist / MAX_DIST) * 0.5;
+                            ctx.strokeStyle = `rgba(0, 255, 136, ${opacity})`;
+                            ctx.beginPath();
+                            ctx.moveTo(p1.x, p1.y);
+                            ctx.lineTo(p2.x, p2.y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+
+                for (let p of particles) {
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = p.color;
+                    ctx.fill();
+                    ctx.shadowColor = '#00ff88';
+                    ctx.shadowBlur = 10;
+                    ctx.fill();
+                    ctx.shadowBlur = 0;
+                }
+            }
+
+            function animate() {
+                updateParticles();
+                draw();
+                requestAnimationFrame(animate);
+            }
+
+            function resizeCanvas() {
+                width = window.innerWidth;
+                height = window.innerHeight;
+                canvas.width = width;
+                canvas.height = height;
+                initParticles();
+            }
+
+            function onMouseMove(e) {
+                mouse.x = e.clientX;
+                mouse.y = e.clientY;
+                mouse.active = true;
+            }
+
+            function onMouseLeave() {
+                mouse.active = false;
+            }
+
+            window.addEventListener('resize', resizeCanvas);
+            window.addEventListener('mousemove', onMouseMove);
+            window.addEventListener('mouseleave', onMouseLeave);
+
+            resizeCanvas();
+            animate();
+        })();
+
+        // Simulateur interactif
+        (function () {
+            // Éléments du DOM
+            const capitalInput = document.getElementById('capital');
+            const riskPercentInput = document.getElementById('riskPercent');
+            const entryInput = document.getElementById('entryPrice');
+            const stopInput = document.getElementById('stopPrice');
+            const tpInput = document.getElementById('tpPrice');
+
+            const assetForex = document.getElementById('assetForex');
+            const assetCrypto = document.getElementById('assetCrypto');
+            const assetCommodity = document.getElementById('assetCommodity');
+            const assetButtons = [assetForex, assetCrypto, assetCommodity];
+            const tickIndicator = document.getElementById('tickIndicator');
+
+            const rrSpan = document.getElementById('rrRatio');
+            const positionSizeSpan = document.getElementById('positionSize');
+            const positionUnitSpan = document.getElementById('positionUnit');
+            const riskAmountSpan = document.getElementById('riskAmount');
+            const profitSpan = document.getElementById('profitPotential');
+            const slDistanceSpan = document.getElementById('slDistance');
+
+            let currentAsset = 'forex';
+
+            assetButtons.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    assetButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    currentAsset = this.dataset.asset;
+                    updateTickIndicator();
+                    updateCalculator();
+                });
+            });
+
+            function updateTickIndicator() {
+                if (currentAsset === 'forex') {
+                    tickIndicator.textContent = 'Pip = 0.0001';
+                } else if (currentAsset === 'crypto') {
+                    tickIndicator.textContent = 'Tick = 0.01';
+                } else {
+                    tickIndicator.textContent = 'Point = 0.01';
+                }
+            }
+
+            function updateCalculator() {
+                let capital = parseFloat(capitalInput.value) || 0;
+                let riskPercent = parseFloat(riskPercentInput.value) || 0;
+                let entry = parseFloat(entryInput.value) || 0;
+                let stop = parseFloat(stopInput.value) || 0;
+                let tp = parseFloat(tpInput.value) || 0;
+
+                if (entry === stop) stop = entry + 0.0001;
+
+                let riskUSD = capital * (riskPercent / 100);
+
+                let tickSize, pipValuePerLot, unit;
+
+                if (currentAsset === 'forex') {
+                    tickSize = 0.0001;
+                    pipValuePerLot = 10;
+                    unit = 'LOTS';
+                } else if (currentAsset === 'crypto') {
+                    tickSize = 0.01;
+                    pipValuePerLot = 1;
+                    unit = 'CONTRATS';
+                } else {
+                    tickSize = 0.01;
+                    pipValuePerLot = 10;
+                    unit = 'LOTS (XAU)';
+                }
+
+                let slDistance = Math.abs(entry - stop) / tickSize;
+                let tpDistance = Math.abs(tp - entry) / tickSize;
+
+                let positionSize = riskUSD / (pipValuePerLot * slDistance);
+                positionSize = Math.round(positionSize * 100) / 100;
+
+                let profit = positionSize * pipValuePerLot * tpDistance;
+                profit = Math.round(profit * 100) / 100;
+
+                let rr = (profit / riskUSD).toFixed(2);
+
+                positionSizeSpan.textContent = positionSize.toFixed(2);
+                positionUnitSpan.textContent = unit;
+                riskAmountSpan.textContent = riskUSD.toFixed(2);
+                profitSpan.textContent = profit.toFixed(2);
+                slDistanceSpan.textContent = slDistance.toFixed(1);
+                rrSpan.textContent = rr;
+            }
+
+            [capitalInput, riskPercentInput, entryInput, stopInput, tpInput].forEach(input => {
+                input.addEventListener('input', updateCalculator);
+            });
+
+            updateTickIndicator();
+            updateCalculator();
+        })();
+    </script>
+    <!-- ==================== FIN SCRIPT ==================== -->
+</body>
+
+</html>
