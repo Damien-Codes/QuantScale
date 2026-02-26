@@ -20,7 +20,6 @@ body {
     font-family: 'JetBrains Mono', monospace;
 }
 
-/* Canvas en arrière-plan (plus discret) */
 #canvas-bg {
     position: fixed;
     top: 0;
@@ -37,7 +36,6 @@ body {
     z-index: 10;
 }
 
-/* Cartes avec effet hover plus subtil */
 .feature-card {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -51,7 +49,6 @@ body {
     transform: translateY(-4px) scale(1.01);
 }
 
-/* Bouton principal */
 .btn-primary {
     background: var(--q-green);
     box-shadow: 0 4px 14px 0 rgba(0, 255, 136, 0.3);
@@ -65,7 +62,6 @@ body {
     transform: scale(1.02);
 }
 
-/* Fenêtre terminal (plus sobre) */
 .terminal-window {
     border: 1px solid var(--border);
     background: #0d1117;
@@ -77,34 +73,22 @@ body {
     transform: scale(1.01);
 }
 
-/* Animation flottante allégée */
 .float {
     animation: float 6s ease-in-out infinite;
 }
 
 @keyframes float {
-    0% {
-        transform: translateY(0px);
-    }
-
-    50% {
-        transform: translateY(-5px);
-    }
-
-    100% {
-        transform: translateY(0px);
-    }
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0px); }
 }
 
-/* Typographie */
-h1,
-h2 {
+h1, h2 {
     letter-spacing: -0.02em;
 }
 
-/* Styles pour les inputs du simulateur */
 .simulator-input {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255,255,255,0.05);
     border: 1px solid var(--border);
     border-radius: 0.5rem;
     padding: 0.5rem 1rem;
@@ -116,7 +100,7 @@ h2 {
 .simulator-input:focus {
     outline: none;
     border-color: var(--q-green);
-    box-shadow: 0 0 0 2px rgba(0, 255, 136, 0.2);
+    box-shadow: 0 0 0 2px rgba(0,255,136,0.2);
 }
 
 .simulator-label {
@@ -128,7 +112,6 @@ h2 {
     display: block;
 }
 
-/* Boutons de sélection d'actif (regroupés) */
 .asset-button {
     background: transparent;
     border: none;
@@ -145,9 +128,8 @@ h2 {
     color: black;
 }
 
-/* Cartes de résultats */
 .result-card {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(255,255,255,0.03);
     border: 1px solid var(--border);
     border-radius: 0.75rem;
     padding: 1rem;
@@ -166,12 +148,11 @@ h2 {
     font-family: 'JetBrains Mono', monospace;
 }
 
-/* Numéros d'étape (petits cercles) */
 .step-number {
     width: 2rem;
     height: 2rem;
     border-radius: 9999px;
-    background: rgba(0, 255, 136, 0.2);
+    background: rgba(0,255,136,0.2);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -180,7 +161,6 @@ h2 {
     font-size: 0.875rem;
 }
 
-/* Cercles pour "Comment ça marche ?" */
 .step-circle {
     width: 3rem;
     height: 3rem;
