@@ -43,8 +43,7 @@
 Un simulateur interactif est disponible directement sur le site :  
 👉 [damien-codes.github.io/QuantScale](https://damien-codes.github.io/QuantScale/#demo)
 
-![Aperçu du simulateur](assets/images/simulator-preview.png)  
-*(Si vous avez une capture d'écran, remplacez le chemin)*
+👀 [Aperçu du simulateur](Assets/Images/simulator-preview.png)
 
 ---
 
