@@ -19,9 +19,6 @@
   - [Depuis le Chrome Web Store](#depuis-le-chrome-web-store)
   - [Installation manuelle](#installation-manuelle)
 - [Utilisation locale](#-utilisation-locale)
-- [Contribuer](#-contribuer)
-- [Licence](#-licence)
-- [Contact](#-contact)
 
 ---
 
@@ -54,6 +51,7 @@ Un simulateur interactif est disponible directement sur le site :
 - **JavaScript** – Logique du calculateur et animation de particules
 - **Google Fonts** – Inter & JetBrains Mono
 - **GitHub Pages** – Hébergement du site
+- **Git** – Gestionnaire de versions
 
 ---
 
