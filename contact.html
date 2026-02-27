@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quant Scale | Contact</title>
+    <!-- Favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300ff88' stroke-width='2'%3E%3Cpolyline points='22 12 18 12 15 21 9 3 6 12 2 12'%3E%3C/polyline%3E%3C/svg%3E">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="Assets/css/style.css">
+    <link rel="stylesheet" href="Assets/css/contact.css">
+</head>
+
+<body class="antialiased">
+
+    <!-- Canvas pour l'effet de fond -->
+    <canvas id="canvas-bg"></canvas>
+
+    <div class="content">
+        <!-- Navbar (identique à l'accueil) -->
+        <nav
+            class="sticky top-4 z-50 max-w-6xl mx-auto px-6 py-4 bg-[#0a0c10]/70 backdrop-blur-lg rounded-full shadow-lg flex justify-between items-center">
+            <div class="text-lg font-extrabold tracking-tight uppercase"><a href="index.html">Quant <span
+                        class="text-[var(--q-green)]">Scale</span></a></div>
+            <div class="hidden md:flex gap-8 text-[13px] font-medium text-gray-300">
+                <a href="index.html#features" class="hover:text-white transition nav-link">Fonctionnalités</a>
+                <a href="index.html#download" class="hover:text-white transition nav-link">Télécharger</a>
+                <a href="https://github.com/Damien-Codes/QuantScale"
+                    class="hover:text-white transition nav-link">GitHub</a>
+            </div>
+            <!-- Bouton menu mobile (simplifié) -->
+            <button class="md:hidden text-gray-300 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linecap="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </nav>
+
+        <!-- Badge "Restons en contact" -->
+        <div class="flex justify-center mt-12">
+            <div
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--q-green)]/10 border border-[var(--q-green)]/20 text-[var(--q-green)] text-[10px] font-bold uppercase tracking-widest">
+                <span class="relative flex h-2 w-2">
+                    <span
+                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--q-green)] opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-[var(--q-green)]"></span>
+                </span>
+                📞 Restons en contact
+            </div>
+        </div>
+
+        <!-- Titre et sous-titre -->
+        <div class="text-center mt-6 mb-12 px-6">
+            <h1
+                class="text-4xl md:text-5xl font-extrabold tracking-tighter mb-4 bg-gradient-to-b from-white to-gray-500 bg-clip-text text-transparent">
+                Contact</h1>
+            <p class="text-gray-400 max-w-2xl mx-auto">Retrouvez-moi sur les réseaux sociaux et contactez-moi pour toute
+                question</p>
+        </div>
+
+        <!-- Grille de contacts (2x2) -->
+        <div class="contact-grid">
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/skyll_box" class="contact-card" target="_blank" rel="noopener">
+                <div class="contact-icon">📸</div>
+                <h3>Instagram</h3>
+                <p class="contact-description">Suivez mes projets et découvertes tech</p>
+                <span class="contact-handle">@skyll_box</span>
+            </a>
+
+            <!-- GitHub -->
+            <a href="https://github.com/Damien-Codes" class="contact-card" target="_blank" rel="noopener">
+                <div class="contact-icon">💻</div>
+                <h3>GitHub</h3>
+                <p class="contact-description">Découvrez mes projets open source</p>
+                <span class="contact-handle">Damien-Codes</span>
+            </a>
+
+            <!-- Email -->
+            <a href="mailto:pinodamien@gmail.com" class="contact-card">
+                <div class="contact-icon">📧</div>
+                <h3>Email</h3>
+                <p class="contact-description">Contactez-moi directement par email</p>
+                <span class="contact-handle">pinodamien@gmail.com</span>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/damien-pino/" class="contact-card" target="_blank" rel="noopener">
+                <div class="contact-icon">💼</div>
+                <h3>LinkedIn</h3>
+                <p class="contact-description">Connectez-vous professionnellement</p>
+                <span class="contact-handle">Damien Pino</span>
+            </a>
+        </div>
+
+        <!-- Section aide (carte) -->
+        <div class="help-section">
+            <div class="help-icon">💬</div>
+            <h2>Besoin d'aide ?</h2>
+            <p>Pour toute question concernant l'extension Quant Scale ou pour signaler un bug, n'hésitez pas à me
+                contacter via l'un des moyens ci-dessus.</p>
+            <p>Je réponds généralement dans les 24-48 heures.</p>
+
+            <div class="help-links">
+                <a href="https://github.com/Damien-Codes/QuantScale/issues" target="_blank" rel="noopener"
+                    class="contact-handle">🐛 Signaler un bug</a>
+                <a href="https://github.com/Damien-Codes/QuantScale/discussions" target="_blank" rel="noopener"
+                    class="contact-handle">💭 Discussions GitHub</a>
+            </div>
+        </div>
+        <div class="back-home-container">
+            <a href="index.html" class="btn-primary">🏠 Retour à l'accueil</a>
+        </div>
+        <footer class="footer">
+            Quant Scale © 2026 | Built for Precision Traders
+        </footer>
+    </div>
+
+    <script src="Assets/js/script.js"></script>
+</body>
+
+</html>
